@@ -16,7 +16,7 @@ if (servicio === "alquilar") {
     if (propiedad === "casa") {
         alert("Le puedo ofrecer estas opciones: \n\n 1)Casa en alquiler en La Reserva de Cardales, 2 dormitorios, 2 baños, 3 ambientes, 1 cochera. \n\n 2) Casa en alquiler en  barrio cerrado Los Cardales, 3 dormitorios, 3 baños, 2 cocheras. \n\n 3)Casa zona céntrica Campana 3 ambientes, 3 dormitorios, 3 baños, 2 cocheras. ");
     } else if (propiedad === "departamento") {
-        alert("Le puedo ofrecer los siguientes departamentos: \n\n 1)Zona céntrica Campana, departamento en alquiler con 3 ambientes, 1 baño, 1 cochera, 2 dormitorios, 1 toilette, a estrenar! \n\n 2) Barrio Urquiza, departamento en alquiler, con 4 ambientes, 3 baños, 3 dormitorios, 1 cochera. \n\n 3) Departamento en alquiler, zona Costanera, 1 baño , 1 toilette, 1 habitación,2 ambientes, balcón con vista  al  río, 1 cochera.");
+        alert("Le puedo ofrecer los siguientes departamentos: \n\n 1)Zona céntrica Campana, departamento en alquiler con 3 ambientes, 1 baño, 1 cochera, 2 dormitorios, 1 toilette, a estrenar! \n\n 2) Barrio Urquiza, departamento en alquiler, con 4 ambientes, 3 baños, 3 dormitorios, 1 cochera. \n\n 3) Zona Costanera, departamento en alquiler, 1 baño , 1 toilette, 1 habitación,2 ambientes, balcón con vista  al  río, 1 cochera.");
     } else {
         alert("Error, ingrese CASA o DEPARTAMENTO.");
     }
