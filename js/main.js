@@ -49,7 +49,7 @@ const expensasDepartamento = (expensa, alquiler) => {
 let salidaExpensas = expensasDepartamento(3500, monto);
 alert("El pago del alquiler incluyendo las expensas es : $" + salidaExpensas);
 
-//Creando un formulario de contacto para el cliente *
+//Creando un formulario de contacto para el cliente con funciones
 const formularioDeContacto = (nombre, apellido, celular, mensaje) => {
     alert("Ingrese sus datos para contactarse con nosotros, en caso de que así quiera, sino escriba ESC");
     let contacto = prompt("Desea contactarse con nosotros? ").toUpperCase();
