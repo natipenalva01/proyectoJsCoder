@@ -74,11 +74,12 @@ if (servicio === "alquilar") {
     alert(salida);
 
     let ofertaAlquiler = prompt("Desea alquilar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADX").toLowerCase();
-    while ((ofertaAlquiler != "si") && (ofertaAlquiler != "no")) {
+    while ((ofertaAlquiler != "casa") && (ofertaAlquiler != "departamento") && ofertaAlquiler != "no estoy interesadx") {
         ofertaAlquiler = prompt("Desea alquilar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADX").toLowerCase();
     }
     if (ofertaAlquiler === "casa") {
        let casa = propiedadesEnAlquiler.filter((elemento) => elemento.tipoPropiedad.includes("casa"));
+       console.log("hola");
        alert(casa);
     }else if(ofertaAlquiler ==="departamento"){
         console.log("hola");
