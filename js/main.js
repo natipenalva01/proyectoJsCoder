@@ -47,9 +47,9 @@ switch (monto) {
 //Creo una Clase alquiler y una clase comprar
 class Alquiler {
     constructor(ubicacionPropiedad, ambientesPropiedad, tipoPropiedad, precioPropiedad, metros2) {
-        this.ubicacion = ubicacionPropiedad.toUpperCase();
+        this.ubicacion = ubicacionPropiedad.toLowerCase();
         this.ambientes = ambientesPropiedad;
-        this.propiedad = tipoPropiedad.toUpperCase();
+        this.propiedad = tipoPropiedad.toLowerCase();
         this.precio = precioPropiedad;
         this.superficie = metros2;
         this.alquilado = false;
@@ -78,8 +78,8 @@ if (servicio === "alquilar") {
         ofertaAlquiler = prompt("Desea alquilar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADX").toLowerCase();
     }
     if (ofertaAlquiler === "casa") {
-       let casa = propiedadesEnAlquiler.filter((elemento) => elemento.tipoPropiedad.includes("casa"));
-       console.log("hola");
+       let casa = propiedadesEnAlquiler.filter((elemento) => elemento.propiedad.includes("casa"));
+       console.log("estoy dentro de oferta alquiler casa");
        alert(casa);
     }else if(ofertaAlquiler ==="departamento"){
         console.log("hola");
