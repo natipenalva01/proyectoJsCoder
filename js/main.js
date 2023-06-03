@@ -61,37 +61,36 @@ class Alquiler {
 
 const alquiler1 = new Alquiler("Zona costanera", 4, "Casa", 1400, 105.8);
 const alquiler2 = new Alquiler("Zona céntrica", 3, "Casa", 550, 197.6);
-const alquiler3 = new Alquiler("Zona céntrica", 2, "Departamento", 200, 46);
+const alquiler3 = new Alquiler("Zona céntrica", 2, "Departamento", 450, 46);
 const alquiler4 = new Alquiler("Barrio Urquiza", 3, "Departamento", 850, 92);
-const alquiler5 = new Alquiler("Colectora Sur", 5, "Casa", 1500, 211.69);
 
+const propiedadesEnAlquiler = [alquiler1, alquiler2, alquiler3, alquiler4];
 if (servicio === "alquilar") {
-    const propiedadesEnAlquiler = [alquiler1, alquiler2, alquiler3, alquiler4, alquiler5];
     let salida = "Las opciones disponibles en este momento son: \n\n";
     for (const propiedades of propiedadesEnAlquiler) {
-        salida += "Ubicación: " + propiedades.ubicacion + "\n" + "Tipo de propiedad: " + propiedades.propiedad + "\n" + "Ambientes: " + propiedades.ambientes + "\n" + "Precio: " + propiedades.precio + " USD" + "\n\n";
+        salida += `Ubicación: ${propiedades.ubicacion}\nTipo de propiedad: ${propiedades.propiedad}\nAmbientes: ${propiedades.ambientes}\nPrecio: ${propiedades.precio} USD\n\n`
     }
     alert(salida);
-
+}
     let ofertaAlquiler = prompt("Desea alquilar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADX").toLowerCase();
     while ((ofertaAlquiler != "casa") && (ofertaAlquiler != "departamento") && ofertaAlquiler != "no estoy interesadx") {
         ofertaAlquiler = prompt("Desea alquilar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADX").toLowerCase();
     }
     if (ofertaAlquiler === "casa") {
-       let casa = propiedadesEnAlquiler.filter((elemento) => elemento.propiedad.includes("casa"));
-       console.log("estoy dentro de oferta alquiler casa");
-       alert(casa);
-    }else if(ofertaAlquiler ==="departamento"){
-        console.log("hola");
+        let mensaje = "";
+        for (const prop of propiedadesEnAlquiler) {
+            if (prop.propiedad === "casa") {
+                mensaje += `Propiedad: ${prop.propiedad}\nUbicada en: ${prop.ubicacion}\nPrecio: ${prop.precio} USD\n\n`;
+            }}
+        alert(mensaje);
     }
-}
 
 
 
-//Creando una función que me indique el precio del departamento más las expensas
-/* la función costoTotalAlquiler se encuentra en funciones.js */
-/* let salidaExpensas = costoTotalAlquiler(3500, monto);
-alert("El pago del alquiler incluyendo las expensas es : $" + salidaExpensas); */
+    //Creando una función que me indique el precio del departamento más las expensas
+    /* la función costoTotalAlquiler se encuentra en funciones.js */
+    /* let salidaExpensas = costoTotalAlquiler(3500, monto);
+    alert("El pago del alquiler incluyendo las expensas es : $" + salidaExpensas); */
 
 
-formularioDeContacto;
+    formularioDeContacto;
