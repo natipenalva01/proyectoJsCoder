@@ -1,20 +1,13 @@
-const costoTotalAlquiler = (expensa, alquiler) => {
-    return expensa + alquiler;
+const obtenerServicio = () => {
+    let obtServicio = prompt("Busca alquilar o comprar una propiedad? (OPCIÓN: ALQUILAR/COMPRAR)").toLowerCase();
+    return obtServicio;
 }
-//Creando un formulario de contacto para el cliente
-const formularioDeContacto = (nombre, apellido, celular, mensaje) => {
-    alert("Ingrese sus datos para contactarse con nosotros, en caso de que así quiera, sino escriba ESC");
-    let contacto = prompt("Desea contactarse con nosotros? ").toUpperCase();
-    if (contacto === "ESC") {
-        alert("Gracias por visitarnos!");
-    } else {
-        nombre = prompt("Ingrese su nombre");
-        apellido = prompt("Ingrese su apellido");
-        celular = parseInt(prompt("Ingrese su celular"));
-        mensaje = prompt("Ingrese su mensaje");
-    }
+const deseaAlquilar = () =>{
+    let alquilar = prompt("Desea alquilar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADO").toLowerCase();
+    return alquilar;
+}
 
-
-    let contactoInfo = `Nombre: ${nombre} \n Apellido: ${apellido} \n Celular: ${celular} \n Mensaje: ${mensaje}`;
-    alert(contactoInfo);
+const deseaComprar = () =>{
+    let comprar = prompt("Desea comprar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADO").toLowerCase();
+    return comprar;
 }
