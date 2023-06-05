@@ -52,7 +52,6 @@ if (servicio === "alquilar") {
         for (const propiedad of propiedadesEnAlquiler) {
             if (propiedad === "no estoy interesado") {
                 break;
-    
             }
         }
     }
