@@ -1,0 +1,84 @@
+/* Estilos generales */
+:root {
+    --max-width: 1280px;
+    --min-width: 320px;
+}
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+}
+/* Header */
+.imagen-logo{
+    width: 225px;
+    height: 87px;
+}
+.nav-link{
+    font-weight: bold;  
+}
+
+/* Contenido principal */
+.titulo-propiedad{
+    font-size: 32px;
+    font-weight: bold;
+    font-style: italic;
+}
+.error{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.propiedades{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.propiedades{
+    gap: 50px;
+}
+/* Footer */
+.footer-wrapper{
+    background-color: rgb(254, 148, 42);
+}
+.footer-seccion{
+    width: 100%;
+    max-width: var(--max-width);
+    margin: auto;
+}
+.footer-seccion img{
+width: 160px;
+height: 80px;
+}
+.footer-seccion p{
+    font-size: 12px;
+    margin-left: 20px;
+}
+.footer-seccion_titulo{
+    margin-left: 20px;
+    font-weight: bolder;
+    font-size: 18px;
+}
+.footer-seccion_dr{
+    text-align: center;
+}
+.footer-seccion_dr small{
+    font-size: 10px;
+}
+
+/* Media Queries */
+@media (min-width: 768px){
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.footer-seccion img{
+    margin: 20px;
+}
+@media (min-width: 992px){
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+}
