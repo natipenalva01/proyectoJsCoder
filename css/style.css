@@ -29,13 +29,11 @@ body{
     font-size: 12px;
     margin-top: 5px;
 }
-.propiedades{
-    display: flex;
-    flex-wrap: wrap;
-    
+.boton{
+    background-color: rgb(254, 148, 42);
 }
-.propiedades{
-    gap: 50px;
+.boton:hover{
+    background-color: rgb(251, 130, 10);
 }
 /* Footer */
 .footer-wrapper{

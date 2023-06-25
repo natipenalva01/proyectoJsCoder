@@ -54,66 +54,68 @@
         </header>
 
         <!-- contenido principal -->
-            <section>
-                <div id="bienvenida">
+        <section>
+            <div id="bienvenida">
 
+            </div>
+            <!-- búsqueda de propiedades -->
+            <div class="row my-3">
+                <div class="col-md-4 offset-md-4 ">
+                    <form id="formulario">
+                        <div class="form-group">
+                            <select class="form-control" id="operacion">
+                                <option value="operacion">Operación</option>
+                                <option value="alquiler">Alquiler</option>
+                                <option value="venta">Venta</option>
+                            </select>
+                            <div id="mensajeErrorOperacion" class="error"></div>
+
+                            <select class="form-control" id="tipoPropiedad">
+                                <option value="tipoPropiedad">Tipo propiedad</option>
+                                <option value="casa">Casa</option>
+                                <option value="departamento">Departamento</option>
+                            </select>
+                            <div id="mensajeErrorTipoPropiedad" class="error"></div>
+
+                            <select class="form-control" id="ubicacion">
+                                <option value="ubicacion">Ubicación</option>
+                                <option value="campana">○ Campana</option>
+                                <option value="altoCardales">- Alto Los Cardales</option>
+                                <option value="elBosque">- El Bosque</option>
+                                <option value="elCardal">- El Cardal II</option>
+                                <option value="cardalesVillage">- Cardales Village</option>
+                                <option value="centro">- Centro</option>
+                                <option value="losPioneros">- Los pioneros</option>
+                                <option value="sanJorge">- San Jorge</option>
+                                <option value="escobar">○ Escobar</option>
+                                <option value="belenDeEscobar">- Belén de Escobar</option>
+                                <option value="lomaVerde">- Loma Verde</option>
+                                <option value="harasSantaMaria">- Haras Santa María</option>
+                            </select>
+                            <div id="mensajeErrorUbicacion" class="error"></div>
+
+                            <select class="form-control" id="valor">
+                                <option value="valor">Valor</option>
+                                <option value="pesos">Pesos</option>
+                                <option value="dolares">Dólares</option>
+                            </select>
+                            <div id="mensajeErrorValor" class="error"></div>
+                            <button id="botonForm" type="button">Boton</button>
+                        </div>
+                    </form>
                 </div>
-                <!-- búsqueda de propiedades -->
-                <div class="row my-3">
-                    <div class="col-md-4 offset-md-4 ">
-                        <form id="formulario">
-                            <div class="form-group">
-                                <select class="form-control" id="operacion">
-                                    <option value="operacion">Operación</option>
-                                    <option value="alquiler">Alquiler</option>
-                                    <option value="venta">Venta</option>
-                                </select>
-                                <div id="mensajeErrorOperacion" class="error"></div>
-
-                                <select class="form-control" id="tipoPropiedad">
-                                    <option value="tipoPropiedad">Tipo propiedad</option>
-                                    <option value="casa">Casa</option>
-                                    <option value="departamento">Departamento</option>
-                                </select>
-                                <div id="mensajeErrorTipoPropiedad" class="error"></div>
-
-                                <select class="form-control" id="ubicacion">
-                                    <option value="ubicacion">Ubicación</option>
-                                    <option value="campana">○ Campana</option>
-                                    <option value="altoCardales">- Alto Los Cardales</option>
-                                    <option value="elBosque">- El Bosque</option>
-                                    <option value="elCardal">- El Cardal II</option>
-                                    <option value="cardalesVillage">- Cardales Village</option>
-                                    <option value="centro">- Centro</option>
-                                    <option value="losPioneros">- Los pioneros</option>
-                                    <option value="sanJorge">- San Jorge</option>
-                                    <option value="escobar">○ Escobar</option>
-                                    <option value="belenDeEscobar">- Belén de Escobar</option>
-                                    <option value="lomaVerde">- Loma Verde</option>
-                                    <option value="harasSantaMaria">- Haras Santa María</option>
-                                </select>
-                                <div id="mensajeErrorUbicacion" class="error"></div>
-
-                                <select class="form-control" id="valor">
-                                    <option value="valor">Valor</option>
-                                    <option value="pesos">Pesos</option>
-                                    <option value="dolares">Dólares</option>
-                                </select>
-                                <div id="mensajeErrorValor" class="error"></div>
-                                <button id="botonForm" type="button">Boton</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
+            </div>
+        </section>
         </div>
         <!-- Cards de propiedades -->
-            <section>
-                <h3>Propiedades destacadas</h3>
-            <div class="propiedades">
-
-            </div>          
-            </section>
+        <section>
+            <h3 class="mx-3">Propiedades destacadas</h3>
+            <div class="container my-3">
+                <div id="propiedades" class="row"> </div>
+            </div>
+        </section>
+        <!-- página ver más información -->
+        <section></section>
         <!-- footer -->
         <div class="footer-wrapper">
             <footer class="footer">

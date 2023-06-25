@@ -48,34 +48,4 @@ function validarFormulario(event) {
     }
     document.getElementById("formulario").submit(); // Envío el formulario
 }
-/* const obtenerServicio = () => {
-    let obtServicio = prompt("Busca alquilar o comprar una propiedad? (OPCIÓN: ALQUILAR/COMPRAR)").toLowerCase();
-    return obtServicio;
-};
-const deseaAlquilar = () =>{
-    let alquilar = prompt("Desea alquilar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADO").toLowerCase();
-    return alquilar;
-};
 
-const deseaComprar = () =>{
-    let comprar = prompt("Desea comprar alguna casa/ departamento? \n OPCIONES \n 1- CASA \n 2- DEPARTAMENTO \n 3- NO ESTOY INTERESADO").toLowerCase();
-    return comprar;
-};
-const mostrarCasasDisponibles = (propiedadesCasa) =>{
-    if (propiedadesCasa.length > 0) {
-        let mensaje = "Las opciones disponibles en este momento son: \n\n" + propiedadesCasa.map(prop => `Propiedad: ${prop.propiedad} \n Ubicada en: ${prop.ubicacion} \n Precio: ${prop.precio} USD \n\n`).join("");
-        alert(mensaje);
-        console.log("estoy en propiedad casa lenght");
-    } else {
-        alert("No hay casas disponibles en este momento.");
-    }
-}
-const mostrarDepartamentosDisponibles = (propiedadesDepartamento) =>{
-    if (propiedadesDepartamento.length > 0) {
-        let mensaje = "Las opciones disponibles en este momento son: \n\n" + propiedadesDepartamento.map(prop => `Propiedad: ${prop.propiedad} \n Ubicada en: ${prop.ubicacion} \n Precio: ${prop.precio} USD \n\n`).join("");
-        alert(mensaje);
-        console.log("estoy en propiedad casa lenght");
-    } else {
-        alert("No hay departamentos disponibles en este momento.");
-    }
-} */
