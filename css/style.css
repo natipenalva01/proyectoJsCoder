@@ -37,7 +37,14 @@ body {
     margin: 20px 15px 20px 15px;
     color: #2a2a2a;
 }
-
+.corazon{
+    display: flex;
+    justify-content: flex-end;
+}
+.corazon_img{
+    width: 20px;
+    height: 20px;
+}
 .busq_prop {
     margin-top: 40px;
 }
@@ -49,7 +56,7 @@ body {
     text-align: center;
 }
 
-.button {
+.button_personal {
     background-color: rgb(255, 146, 12);
     color: #000000;
     padding: 10px 35px;
@@ -62,7 +69,7 @@ body {
     margin-bottom: 10px;
 }
 
-.button:hover {
+.button_personal:hover {
     background-color: rgb(251, 130, 10);
 }
 
@@ -74,9 +81,10 @@ body {
     background: #F8F9FA;
     color: #000000;
     font-size: 15px;
-    padding: 7px 50px 7px 50px;
+    margin-right: 20px;
     border-radius: 10px;
-
+    border-style: solid;
+    border-color: #a7a6a6;
 }
 
 .btn:hover {
@@ -89,7 +97,19 @@ body {
     font-weight: bold;
     margin-right: 3px;
 }
-
+/* Ver propiedad*/
+.custom-border{
+    border-style:solid ;
+    border-width: 2px;
+    border-color: rgb(255, 140, 25);
+    border-radius:10px;
+}
+.costum_border{
+    border: #cacaca;
+    border-radius: 10px;
+    border-style: solid;
+    padding: 10px 10px 10px;
+}
 /* Footer */
 .footer-wrapper {
     background-color: rgb(254, 148, 42);

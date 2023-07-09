@@ -1,32 +1,27 @@
 //Creo una Clase Propiedad
 class Propiedad {
     constructor(ubicacionPropiedad, ambientesPropiedad, tipoPropiedad, precioPropiedad, metros2, estadoPropiedad, imagenPropiedad, codigoAviso) {
-        this.ubicacion = ubicacionPropiedad.toLowerCase();
+        this.ubicacion = ubicacionPropiedad;
         this.ambientes = ambientesPropiedad;
-        this.propiedad = tipoPropiedad.toLowerCase();
+        this.propiedad = tipoPropiedad;
         this.precio = precioPropiedad;
         this.superficie = metros2;
-        this.estado = estadoPropiedad.toLowerCase();
+        this.estado = estadoPropiedad;
         this.imagen = imagenPropiedad;
         this.codigo = codigoAviso;
     }
 }
-const propiedad1 = new Propiedad("Zona costanera", 4, "Casa", 1400, 105.8, "venta", "./imagenes/casa2_a.jpg", 1);
-const propiedad2 = new Propiedad("Zona céntrica", 3, "Casa", 700, 197.6, "alquiler", "./imagenes/casa5_a.jpg", 2);
-const propiedad3 = new Propiedad("Zona céntrica", 2, "Departamento", 450, 46, "alquiler", "./imagenes/dep1_g.jpg", 3);
-const propiedad4 = new Propiedad("Barrio Urquiza", 3, "Departamento", 850, 92, "venta", "./imagenes/dep2_a.jpg", 4);
-const propiedad5 = new Propiedad("Zona céntrica", 5, "Casa", 55000, 156, "venta", "./imagenes/casa1_a.jpg", 5);
-const propiedad6 = new Propiedad("Zona costanera", 4, "Casa", 240000, 152, "venta", "./imagenes/casa3_a.jpg", 6);
+const propiedad1 = new Propiedad("El Bosque", 4, "Casa", "3.000 USD", 300, "alquiler", "./imagenes/casa2_a.jpg", 1);
+const propiedad2 = new Propiedad("Campana Centro", 3, "Casa", "700 USD", 197.6, "alquiler", "./imagenes/casa5_a.jpg", 2);
+const propiedad3 = new Propiedad("Escobar Centro", 2, "Departamento", "450 USD", 46, "alquiler", "./imagenes/dep1_g.jpg", 3);
+const propiedad4 = new Propiedad("Belén de Escobar", 6, "Departamento", "189.420.000", 257, "venta", "./imagenes/dep2_a.jpg", 4);
+const propiedad5 = new Propiedad("Cardales Village", 5, "Casa", "55.000 USD", 156, "venta", "./imagenes/casa1_a.jpg", 5);
+const propiedad6 = new Propiedad("El Bosque", 4, "Casa", "240.000 USD", 152, "venta", "./imagenes/casa3_a.jpg", 6);
+const propiedad7 = new Propiedad("Alto Los Cardales",6,"Casa", "400.000 ARS", "305", "venta","./imagenes/casa4_a.jpg", 7);
+const propiedad8 = new Propiedad("Campana Centro",4,"Departamento", "92.988.000 ARS", "88", "venta","./imagenes/dep3_a.jpg", 8);
+const propiedad9 = new Propiedad("Alto Los Cardales",6,"Casa", "400.000 ARS", "305", "alquiler","./imagenes/dep4_a.jpg", 9);
+const propiedades = [propiedad1, propiedad2, propiedad3, propiedad4, propiedad5, propiedad6, propiedad7, propiedad8, propiedad9 ];
 
-const propiedades = [propiedad1, propiedad2, propiedad3, propiedad4, propiedad5, propiedad6];
-
-//Guardando las propidades en el Storage
-function guardarPropiedadesLS() {
-    localStorage.setItem("propiedades", JSON.stringify(propiedades));
-}
-function cargarPropiedadesLS() {
-    return JSON.parse(localStorage.getItem("propiedades"));
-}
 guardarPropiedadesLS();
 //Creando mis cards de propiedades
 function renderPropiedades() {
@@ -37,10 +32,9 @@ function renderPropiedades() {
           <div class= "card text-center" style="width: 18rem;">
             <img src="${propiedad.imagen}" class="card-img-top" alt="propiedades disponibles" width = 300px height = 200px>
           <div class="card-body">
-            <h5 class="card-title"><b>${propiedad.precio} USD</b></h5>
-            <p class="card-text"> Propiedad en ${propiedad.estado}, ubicada en ${propiedad.ubicacion}</p> 
-            <p class ="button" onClick = "verPropiedad(${propiedad.codigo})"> Ver más información</p> 
-            <p><b> ${propiedad.superficie}</b> m² totales, <b> ${propiedad.ambientes}</b> ambientes</p>
+            <h5 class="card-title"><b>${propiedad.precio}</b></h5>
+            <p class="card-text text-muted"> Propiedad en ${propiedad.estado}, ubicada en ${propiedad.ubicacion}</p> 
+            <p class ="button_personal" onClick = "verPropiedad(${propiedad.codigo})"> Ver más información</p> 
           </div>
           </div>
           </div>`;
@@ -55,6 +49,8 @@ function verPropiedad(codigo) {
     localStorage.setItem("propiedad", JSON.stringify(propiedad));
     location.href = "ver-propiedad.html";
 }
+
+guardarPropiedadesLS();
 //Función para validar el formulario
 function validarFormulario(event) {
     event.preventDefault();
