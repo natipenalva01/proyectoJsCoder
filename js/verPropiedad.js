@@ -30,6 +30,7 @@ function renderPropiedad() {
     document.getElementById("propiedad").innerHTML = contenido;
 }
 renderPropiedad();
+renderBotonFavs();
 
 function agregarPropiedad(codigo){
   const propiedades = cargarPropiedadesLS();

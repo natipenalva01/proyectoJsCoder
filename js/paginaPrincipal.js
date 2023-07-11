@@ -42,6 +42,7 @@ function renderPropiedades() {
     document.getElementById("propiedades").innerHTML = contenido;
 };
 renderPropiedades();
+renderBotonFavs();
 //Función para encontrar la propiedad que quiero ver
 function verPropiedad(codigo) {
     let propiedadesDisponibles = cargarPropiedadesLS();
