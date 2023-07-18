@@ -12,18 +12,43 @@ function guardarFavoritosLS(favorito) {
 function cargarFavoritosLS() {
     return JSON.parse(localStorage.getItem("favoritos")) || [];
 }
-function cantidadTotalPropiedades(){
+function estaEnFavs(codigo) {
     const favoritos = cargarFavoritosLS();
-    // return favoritos.reduce((acum, item)=> acum += item, 0);
+    return favoritos.some(item => item.codigo === codigo)
+}
+function agregarPropiedad(codigo) {
+    const favoritos = cargarFavoritosLS();
+    const propiedades = cargarPropiedadesLS();
+    if (estaEnFavs(codigo)) {
+        let pos = favoritos.findIndex(item => item.codigo === codigo);
+        console.log(pos);
+        favoritos[pos].cantidad === 1;
+    } else {
+        const propiedad = propiedades.find(item => item.codigo === codigo);
+        favoritos.push(propiedad);
+    }
+
+    guardarFavoritosLS(favoritos);
+    renderBotonFavs();
+}
+function eliminarPropiedad(codigo) {
+    const favoritos = cargarFavoritosLS();
+    const nuevoFavorito = favoritos.filter(item => item.codigo != codigo);
+    guardarFavoritosLS(nuevoFavorito);
+    renderBotonFavs();
+    renderPropiedades();
+}
+function cantidadTotalPropiedades() {
+    const favoritos = cargarFavoritosLS();
     return favoritos.length;
-  }
-function renderBotonFavs(){
-   let  botonFavs = document.getElementById("favs");
-   let contenido = `<button type="button" class="btn btn-primary position-relative">
-   <img class="corazon_img" src="./imagenes/heart.svg" alt="corazón">
-   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-   ${cantidadTotalPropiedades()}  
-    </span>
- </button>`;
- botonFavs.innerHTML= contenido;
+}
+function renderBotonFavs() {
+    let botonFavs = document.getElementById("favs");
+    let contenido = `<button type="button" class="btn btn-primary position-relative">
+        <img class="corazon_img" src="../imagenes/heart.svg" alt="corazón">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            ${cantidadTotalPropiedades()}  
+        </span>
+    </button>`;
+    botonFavs.innerHTML = contenido;
 }

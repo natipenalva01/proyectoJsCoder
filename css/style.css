@@ -32,28 +32,23 @@ body {
     height: 600px;
 }
 
-.titulo_propiedad{
+.titulo_propiedad {
     font-weight: bold;
-    margin: 20px 15px 20px 15px;
     color: #2a2a2a;
 }
-.corazon{
+
+.corazon {
     display: flex;
     justify-content: flex-end;
 }
-.corazon_img{
+
+.corazon_img {
     width: 20px;
     height: 20px;
 }
+
 .busq_prop {
     margin-top: 40px;
-}
-
-.error {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-    text-align: center;
 }
 
 .button_personal {
@@ -97,19 +92,27 @@ body {
     font-weight: bold;
     margin-right: 3px;
 }
+
 /* Ver propiedad*/
-.custom-border{
-    border-style:solid ;
+.custom-border {
+    border-style: solid;
     border-width: 2px;
     border-color: rgb(255, 140, 25);
-    border-radius:10px;
+    border-radius: 10px;
 }
-.costum_border{
+
+.costum_border {
     border: #cacaca;
     border-radius: 10px;
     border-style: solid;
     padding: 10px 10px 10px;
 }
+
+/* Propiedades guardadas */
+.trash {
+    cursor: pointer;
+}
+
 /* Footer */
 .footer-wrapper {
     background-color: rgb(254, 148, 42);

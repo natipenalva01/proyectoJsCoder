@@ -29,10 +29,7 @@
                                 <a class="nav-link" href="index.html">INICIO</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">PROPIEDADES</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">TASACIONES</a>
+                                <a class="nav-link" href="#propiedades">PROPIEDADES</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">CONTACTO</a>
@@ -62,57 +59,54 @@
                             <div class="col-sm-6 col-md-2">
                                 <div class="form-group">
                                     <select class="form-control" id="operacion">
-                                        <option value="operacion">Operación</option>
-                                        <option value="alquiler">Alquiler</option>
-                                        <option value="venta">Venta</option>
+                                        <option value="Operación">Operación</option>
+                                        <option value="Alquiler">Alquiler</option>
+                                        <option value="Venta">Venta</option>
                                     </select>
-                                    <div id="mensajeErrorOperacion" class="error"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-2">
                                 <div class="form-group">
                                     <select class="form-control" id="tipoPropiedad">
-                                        <option value="tipoPropiedad">Tipo propiedad</option>
-                                        <option value="casa">Casa</option>
-                                        <option value="departamento">Departamento</option>
+                                        <option value="Tipo propiedad">Tipo propiedad</option>
+                                        <option value="Casa">Casa</option>
+                                        <option value="Departamento">Departamento</option>
                                     </select>
-                                    <div id="mensajeErrorTipoPropiedad" class="error"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-2">
                                 <div class="form-group">
                                     <select class="form-control" id="ubicacion">
-                                        <option value="ubicacion">Ubicación</option>
-                                        <option value="campana">○ Campana</option>
-                                        <option value="altoCardales">- Alto Los Cardales</option>
-                                        <option value="elBosque">- El Bosque</option>
-                                        <option value="elCardal">- El Cardal II</option>
-                                        <option value="cardalesVillage">- Cardales Village</option>
-                                        <option value="centro">- Centro</option>
-                                        <option value="losPioneros">- Los pioneros</option>
-                                        <option value="sanJorge">- San Jorge</option>
-                                        <option value="escobar">○ Escobar</option>
-                                        <option value="belenDeEscobar">- Belén de Escobar</option>
-                                        <option value="lomaVerde">- Loma Verde</option>
-                                        <option value="harasSantaMaria">- Haras Santa María</option>
+                                        <option value="Ubicación">Ubicación</option>
+                                        <option value="Campana">○ Campana</option>
+                                        <option value=" Alto Los Cardales">- Alto Los Cardales</option>
+                                        <option value=" El Bosque">- El Bosque</option>
+                                        <option value="El Cardal II">- El Cardal II</option>
+                                        <option value="Cardales Village">- Cardales Village</option>
+                                        <option value="Centro">- Centro</option>
+                                        <option value="Los pioneros">- Los pioneros</option>
+                                        <option value="San Jorge">- San Jorge</option>
+                                        <option value="Escobar">○ Escobar</option>
+                                        <option value="Belén de Escobar">- Belén de Escobar</option>
+                                        <option value="Loma Verde">- Loma Verde</option>
+                                        <option value="Haras Santa María">- Haras Santa María</option>
                                     </select>
-                                    <div id="mensajeErrorUbicacion" class="error"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-2">
                                 <div class="form-group">
                                     <select class="form-control" id="valor">
-                                        <option value="valor">Valor</option>
-                                        <option value="pesos">Pesos</option>
-                                        <option value="dolares">Dólares</option>
+                                        <option value="Valor">Valor</option>
+                                        <option value="ARS">ARS</option>
+                                        <option value="USD">USD</option>
                                     </select>
-                                    <div id="mensajeErrorValor" class="error"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-2">
                                 <div class="form-group">
-                                    <button id="botonForm" type="button" class="btn"> <img class="search"
-                                            src="./imagenes/search.svg" alt="icono">Buscar</button>
+                                    <button id="botonForm" type="button" class="btn" onclick="buscarPropiedades()">
+                                        <img class="search" src="./imagenes/search.svg" alt="icono">Buscar
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -122,12 +116,14 @@
         </div>
         <!-- Cards de propiedades -->
         <section>
-            <div class="row">
-                <div class="col-md-8">
-                    <h3 class="mx-3 titulo_propiedad">Propiedades destacadas</h3>
-                </div>
-                <div class="col-md-4 corazon">
-                    <a href="favoritos.html" id="favs"></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3 class="mx-3 titulo_propiedad">Propiedades destacadas</h3>
+                    </div>
+                    <div class="col-md-4 corazon">
+                        <a href="favoritos.html" id="favs"></a>
+                    </div>
                 </div>
             </div>
             <div class="container my-3">
@@ -166,8 +162,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-        <script src="./js/funciones.js"></script>
-        <script src="./js/paginaPrincipal.js"></script>
+    <script src="./js/funciones.js"></script>
+    <script src="./js/paginaPrincipal.js"></script>
 </body>
 
 </html>

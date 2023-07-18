@@ -1,11 +1,11 @@
 //Mostrando las propiedades al hacer click en "ver más información"
 function renderPropiedad() {
-    let propiedad = JSON.parse(localStorage.getItem("propiedad"));
-    let contenido = `
+  let propiedad = JSON.parse(localStorage.getItem("propiedad"));
+  let contenido = `
     <div class="container mb-5">
       <div class="row">
         <div class="col text-end">
-          <a href="favoritos.html" id="favs"><img class="corazon_img" src="./imagenes/heart.svg" alt="corazón"></a>
+        <a href="../favoritos.html" id="favs"></a>
         </div>
       </div>
       <div class="row">
@@ -20,32 +20,27 @@ function renderPropiedad() {
           <p><i class="bi bi-grid-3x2"> <b>${propiedad.ambientes}</b> ambientes</i></p>
           <p><i class="bi bi-geo-alt">Ubicada en: <b>${propiedad.ubicacion}</b></i></p>
           <p class= "my-2">
-          <button class= "btn" onclick = "agregarPropiedad(${propiedad.codigo})">Agregar a favoritos</button>
+          <button class= "btn botonAgregar" onclick = "agregarPropiedad(${propiedad.codigo}); mostrarGuardado()">Agregar a favoritos</button>
           </p>
         </div>
       </div>
     </div>
   `;
 
-    document.getElementById("propiedad").innerHTML = contenido;
+  document.getElementById("propiedad").innerHTML = contenido;
 }
 renderPropiedad();
 renderBotonFavs();
 
-function agregarPropiedad(codigo){
-  const propiedades = cargarPropiedadesLS();
-  const favoritos = cargarFavoritosLS();
-  const propiedad = propiedades.find(item => item.codigo === codigo);     
-  favoritos.push(propiedad);
-  guardarFavoritosLS(favoritos);
-  console.log("Propiedad agregada al carrito!");
-}
-//Func nuevas
-function eliminarPropiedad(codigo){
-  const favoritos = cargarFavoritosLS();
-  const nuevoFavorito = favoritos.filter(item => item.codigo != codigo);
-  guardarFavoritosLS(nuevoFavorito);
-}
-function vaciarFavoritos(){
-  localStorage.removeItem("favoritos");
+const mostrarGuardado = () => {
+  Toastify({
+    text: "Se ha guardado la propiedad en favoritos!",
+    duration: 3000,
+    close: true,
+    gravity: "bottom",
+    position: "right",
+    style: {
+      background: "#E55807",
+    },
+  }).showToast();
 }
