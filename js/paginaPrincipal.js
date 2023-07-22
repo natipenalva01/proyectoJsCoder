@@ -1,28 +1,15 @@
-//Creo una Clase Propiedad
-class Propiedad {
-    constructor(ubicacionPropiedad, ambientesPropiedad, tipoPropiedad, precioPropiedad, metros2, estadoPropiedad, imagenPropiedad, codigoAviso, localidadDistintiva) {
-        this.ubicacion = ubicacionPropiedad;
-        this.ambientes = ambientesPropiedad;
-        this.propiedad = tipoPropiedad;
-        this.precio = precioPropiedad;
-        this.superficie = metros2;
-        this.estado = estadoPropiedad;
-        this.imagen = imagenPropiedad;
-        this.codigo = codigoAviso;
-        this.localidad = localidadDistintiva;
-    }
-}
-const propiedad1 = new Propiedad("San Jorge", 4, "Casa", "3.000 USD", 300, "Alquiler", "./imagenes/casa2_a.jpg", 1, "Campana");
-const propiedad2 = new Propiedad("Campana Centro", 3, "Casa", "700 USD", 197.6, "Alquiler", "./imagenes/casa5_a.jpg", 2, "Campana");
-const propiedad3 = new Propiedad("Loma Verde", 2, "Departamento", "450 USD", 46, "Alquiler", "./imagenes/dep1_g.jpg", 3, "Escobar");
-const propiedad4 = new Propiedad("Belén de Escobar", 6, "Departamento", "189.420.000", 257, "Venta", "./imagenes/dep2_a.jpg", 4, "Escobar");
-const propiedad5 = new Propiedad("Cardales Village", 5, "Casa", "55.000 USD", 156, "Venta", "./imagenes/casa1_a.jpg", 5, "Campana");
-const propiedad6 = new Propiedad("El Bosque", 4, "Casa", "240.000 USD", 152, "Venta", "./imagenes/casa3_a.jpg", 6, "Campana");
-const propiedad7 = new Propiedad("Alto Los Cardales", 6, "Casa", "400.000 ARS", "305", "Venta", "./imagenes/casa4_a.jpg", 7, "Campana");
-const propiedad8 = new Propiedad("El Cardal II", 4, "Departamento", "92.988.000 ARS", "88", "Venta", "./imagenes/dep3_a.jpg", 8, "Campana");
-const propiedad9 = new Propiedad("Haras Santa María", 6, "Casa", "400.000 ARS", "305", "Alquiler", "./imagenes/dep4_a.jpg", 9, "Escobar");
-const propiedades = [propiedad1, propiedad2, propiedad3, propiedad4, propiedad5, propiedad6, propiedad7, propiedad8, propiedad9];
 
+const propiedades = [
+    {ubicacion: "San Jorge", ambientes: 4, propiedad: "Casa", precio: "3.000 USD", superficie: 300, estado: "Alquiler", imagen: "./imagenes/casa2_a.jpg", codigo: 1, localidad: "Campana" },
+    {ubicacion: "Campana Centro", ambientes: 3, propiedad: "Casa", precio: "700 USD", superficie: 197.6, estado: "Alquiler", imagen: "./imagenes/casa5_a.jpg", codigo: 2, localidad: "Campana" },
+    {ubicacion: "Loma Verde", ambientes: 2, propiedad: "Departamento", precio: "450 USD", superficie: 46, estado: "Alquiler", imagen: "./imagenes/dep1_g.jpg", codigo:  3, localidad:"Escobar" },
+    {ubicacion: "Belén de Escobar", ambientes: 6, propiedad: "Departamento", precio: "189.420.000 ARS", superficie: 257, estado: "Venta", imagen: "./imagenes/dep2_a.jpg", codigo:  4, localidad:"Escobar" },
+    {ubicacion: "Cardales Village", ambientes: 5, propiedad: "Casa", precio: "55.000 USD", superficie:  156, estado: "Venta", imagen: "./imagenes/casa1_a.jpg", codigo:  5, localidad:"Campana" },
+    {ubicacion: "El Bosque", ambientes:4, propiedad: "Casa", precio: "240.000 USD", superficie: 152, estado: "Venta", imagen: "./imagenes/casa3_a.jpg", codigo:  6, localidad:"Campana" },
+    {ubicacion: "Alto Los Cardales", ambientes: 6, propiedad: "Casa", precio: "400.000 USD", superficie: 300, estado: "Venta", imagen: "./imagenes/casa4_a.jpg", codigo:  7, localidad:"Campana" },
+    {ubicacion: "El Cardal II", ambientes: 4, propiedad: "Departamento", precio: "92.988.000 ARS", superficie: 99, estado: "Venta", imagen: "./imagenes/dep3_a.jpg", codigo:  8, localidad:"Campana" },
+    {ubicacion: "Haras Santa María", ambientes: 6, propiedad: "Casa", precio: "220.000 ARS", superficie: 305, estado: "Alquiler", imagen: "./imagenes/dep4_a.jpg", codigo: 9, localidad:"Escobar" },
+]
 guardarPropiedadesLS();
 //Creando mis cards de propiedades
 function renderPropiedades() {
@@ -54,14 +41,14 @@ function verPropiedad(codigo) {
 
 guardarPropiedadesLS();
 //Búsqueda de propiedades
-const operacion = document.getElementById("operacion");
-const tipoPropiedad = document.getElementById("tipoPropiedad");
+const estado = document.getElementById("estado");
+const propiedad = document.getElementById("propiedad");
 const ubicacion = document.getElementById("ubicacion");
 const valor = document.getElementById("valor");
 
 function buscarPropiedades() {
-    const operacionSeleccionada = operacion.value;
-    const tipoPropiedadSeleccionada = tipoPropiedad.value;
+    const operacionSeleccionada = estado.value;
+    const tipoPropiedadSeleccionada = propiedad.value;
     const ubicacionSeleccionada = ubicacion.value;
     const valorSeleccionado = valor.value;
     let contenido = "";
@@ -74,9 +61,9 @@ function buscarPropiedades() {
             cumpleFiltro = cumpleFiltro && propiedad.propiedad === tipoPropiedadSeleccionada;
         }
         if (ubicacionSeleccionada !== "Ubicación") {
-            cumpleFiltro = cumpleFiltro && propiedad.localidad.includes(ubicacionSeleccionada.trim());
+            cumpleFiltro = cumpleFiltro && (propiedad.localidad.includes(ubicacionSeleccionada)|| propiedad.ubicacion.includes(ubicacionSeleccionada));
+        console.log(ubicacionSeleccionada);
         }
-
         if (valorSeleccionado !== "Valor") {
             cumpleFiltro = cumpleFiltro && propiedad.precio.includes(valorSeleccionado.trim());
         }

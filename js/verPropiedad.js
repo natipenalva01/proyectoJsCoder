@@ -10,7 +10,7 @@ function renderPropiedad() {
       </div>
       <div class="row">
         <div class="col-8">
-          <img src="${propiedad.imagen}" class="card-img-top" alt="propiedades disponibles" style="width: 400px; height: 400px; display: block; margin: 0 auto;">
+          <img src="../${propiedad.imagen}" class="card-img-top" alt="propiedades disponibles" style="width: 400px; height: 400px; display: block; margin: 0 auto;">
         </div>
       <div class="col-4 d-flex align-items-center justify-content-center">
         <div class="text-center costum_border">
