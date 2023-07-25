@@ -3,7 +3,8 @@ function guardarPropiedadesLS() {
     localStorage.setItem("propiedades", JSON.stringify(propiedades));
 }
 function cargarPropiedadesLS() {
-    return JSON.parse(localStorage.getItem("propiedades"));
+    const propiedades = JSON.parse(localStorage.getItem("propiedades"))
+    return propiedades || [];
 }
 // LS donde guardo la propiedad favorita seleccionada
 function guardarFavoritosLS(favorito) {
