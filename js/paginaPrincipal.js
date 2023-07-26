@@ -11,7 +11,7 @@ function renderPropiedades(data) {
     let contenido = "";
     data.forEach(propiedad => {
         contenido +=
-        `<div class = "col-md-4 mb-3">
+            `<div class = "col-md-4 mb-3">
             <div class= "card text-center" style="width: 18rem;">
                 <img src="${propiedad.imagen}" class="card-img-top" alt="propiedades disponibles" width="300px" height="200px">
             <div class="card-body">
@@ -24,11 +24,9 @@ function renderPropiedades(data) {
     });
     document.getElementById("propiedades").innerHTML = contenido;
 };
-
-
 //Función para encontrar la propiedad que quiero ver
 function verPropiedad(codigo) {
-    const propiedadesDisponibles = cargarPropiedadesLS(); 
+    const propiedadesDisponibles = cargarPropiedadesLS();
     if (propiedadesDisponibles.length > 0) {
         let propiedad = propiedadesDisponibles.find(item => item.codigo === codigo);
         localStorage.setItem("propiedad", JSON.stringify(propiedad));
@@ -37,7 +35,6 @@ function verPropiedad(codigo) {
         console.log("No hay propiedades disponibles.");
     }
 }
-
 //Búsqueda de propiedades
 function buscarPropiedades() {
     const estado = document.getElementById("estado");
@@ -52,28 +49,23 @@ function buscarPropiedades() {
             const tipoPropiedadSeleccionada = propiedad.value;
             const ubicacionSeleccionada = ubicacion.value;
             const valorSeleccionado = valor.value;
-            const propidadesFiltradas = data.filter(propiedad => {
-                let cumpleFiltro = true;
-                if (operacionSeleccionada !== "Operación") {
-                    cumpleFiltro = cumpleFiltro && propiedad.estado === operacionSeleccionada;
-                }
-                if (tipoPropiedadSeleccionada !== "Tipo propiedad") {
-                    cumpleFiltro = cumpleFiltro && propiedad.propiedad === tipoPropiedadSeleccionada;
-                }
-                if (ubicacionSeleccionada !== "Ubicación") {
-                    cumpleFiltro = cumpleFiltro && (propiedad.localidad.includes(ubicacionSeleccionada) || propiedad.ubicacion.includes(ubicacionSeleccionada));
-                    console.log(ubicacionSeleccionada);
-                }
-                if (valorSeleccionado !== "Valor") {
-                    cumpleFiltro = cumpleFiltro && propiedad.precio.includes(valorSeleccionado.trim());
-                }
-                return cumpleFiltro;
+
+            const propiedadesFiltradas = data.filter(propiedad => {
+                const operacionCumple = operacionSeleccionada === "Operación" || propiedad.estado === operacionSeleccionada;
+                const tipoPropiedadCumple = tipoPropiedadSeleccionada === "Tipo propiedad" || propiedad.propiedad === tipoPropiedadSeleccionada;
+                const ubicacionCumple = ubicacionSeleccionada === "Ubicación" || propiedad.localidad.includes(ubicacionSeleccionada) || propiedad.ubicacion.includes(ubicacionSeleccionada);
+                const valorCumple = valorSeleccionado === "Valor" || propiedad.precio.includes(valorSeleccionado.trim());
+
+                return operacionCumple && tipoPropiedadCumple && ubicacionCumple && valorCumple;
             });
 
-            if (propidadesFiltradas.length > 0) {
-                renderPropiedades(propidadesFiltradas);
+            if (propiedadesFiltradas.length > 0) {
+                renderPropiedades(propiedadesFiltradas);
             } else {
-                renderPropiedades(data);
+                const mensaje = `<div class="alert alert-danger text-center" role="alert">
+                            No se encuentran propiedades disponibles con esas características
+                          </div>`;
+                document.getElementById("propiedades").innerHTML = mensaje;
             }
         });
 }

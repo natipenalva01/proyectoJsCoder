@@ -1,7 +1,7 @@
 //Mostrando las propiedades al hacer click en "ver más información"
 function renderPropiedad() {
-    let propiedad = JSON.parse(localStorage.getItem("propiedad"));
-    let contenido = `
+  let propiedad = JSON.parse(localStorage.getItem("propiedad"));
+  let contenido = `
       <div class="container mb-5">
         <div class="row">
           <div class="col text-end">
@@ -26,21 +26,21 @@ function renderPropiedad() {
         </div>
       </div>
     `;
-  
-    document.getElementById("propiedad").innerHTML = contenido;
-  }
-  renderPropiedad();
-  renderBotonFavs();
-  
-  const mostrarGuardado = () => {
-    Toastify({
-      text: "Se ha guardado la propiedad en favoritos!",
-      duration: 3000,
-      close: true,
-      gravity: "bottom",
-      position: "right",
-      style: {
-        background: "#E55807",
-      },
-    }).showToast();
-  }
+
+  document.getElementById("propiedad").innerHTML = contenido;
+}
+renderPropiedad();
+renderBotonFavs();
+
+const mostrarGuardado = () => {
+  Toastify({
+    text: "Se ha guardado la propiedad en favoritos!",
+    duration: 3000,
+    close: true,
+    gravity: "bottom",
+    position: "right",
+    style: {
+      background: "#E55807",
+    },
+  }).showToast();
+}
