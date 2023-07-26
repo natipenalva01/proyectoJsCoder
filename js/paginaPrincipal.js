@@ -1,9 +1,10 @@
 fetch("./js/propiedades.json")
     .then(response => response.json())
-    .then(data => {
+    .then(responseData => {
+        data = responseData;
+        guardarPropiedadesLS(data);
         renderPropiedades(data);
         renderBotonFavs();
-        guardarPropiedadesLS();
     })
 //Creando mis cards de propiedades
 function renderPropiedades(data) {
@@ -12,11 +13,11 @@ function renderPropiedades(data) {
         contenido +=
         `<div class = "col-md-4 mb-3">
             <div class= "card text-center" style="width: 18rem;">
-                <img src="${propiedad.imagen}" class="card-img-top" alt="propiedades disponibles" width = 300px height = 200px>
+                <img src="${propiedad.imagen}" class="card-img-top" alt="propiedades disponibles" width="300px" height="200px">
             <div class="card-body">
             <h5 class="card-title"><b>${propiedad.precio}</b></h5>
             <p class="card-text text-muted"> Propiedad en ${(propiedad.estado).toLowerCase()}, ubicada en ${propiedad.ubicacion}</p> 
-            <p class="button_personal" onClick="verPropiedad(${propiedad.codigo}, ${JSON.stringify(data)})">Ver más información</p>
+            <p class="button_personal" onClick="verPropiedad(${propiedad.codigo}, data)">Ver más información</p>
             </div>
             </div>
         </div>`;
@@ -24,9 +25,10 @@ function renderPropiedades(data) {
     document.getElementById("propiedades").innerHTML = contenido;
 };
 
+
 //Función para encontrar la propiedad que quiero ver
-function verPropiedad(codigo, data) {
-    const propiedadesDisponibles = data; 
+function verPropiedad(codigo) {
+    const propiedadesDisponibles = cargarPropiedadesLS(); 
     if (propiedadesDisponibles.length > 0) {
         let propiedad = propiedadesDisponibles.find(item => item.codigo === codigo);
         localStorage.setItem("propiedad", JSON.stringify(propiedad));
@@ -35,6 +37,7 @@ function verPropiedad(codigo, data) {
         console.log("No hay propiedades disponibles.");
     }
 }
+
 //Búsqueda de propiedades
 function buscarPropiedades() {
     const estado = document.getElementById("estado");

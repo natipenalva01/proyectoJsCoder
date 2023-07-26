@@ -1,6 +1,6 @@
 //Guardando las propidades en el Storage
-function guardarPropiedadesLS() {
-    localStorage.setItem("propiedades", JSON.stringify(propiedades));
+function guardarPropiedadesLS(data) {
+    localStorage.setItem("propiedades", JSON.stringify(data));
 }
 function cargarPropiedadesLS() {
     const propiedades = JSON.parse(localStorage.getItem("propiedades"))
