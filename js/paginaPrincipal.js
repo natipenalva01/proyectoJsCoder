@@ -30,7 +30,7 @@ function verPropiedad(codigo) {
     if (propiedadesDisponibles.length > 0) {
         let propiedad = propiedadesDisponibles.find(item => item.codigo === codigo);
         localStorage.setItem("propiedad", JSON.stringify(propiedad));
-        location.href = "../verpropiedad.html";
+        location.href = "/verpropiedad.html";
     } else {
         console.log("No hay propiedades disponibles.");
     }
