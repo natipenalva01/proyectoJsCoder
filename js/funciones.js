@@ -30,7 +30,6 @@ function agregarPropiedad(codigo) {
     }
 
     guardarFavoritosLS(favoritos);
-    renderBotonFavs();
 }
 function renderBotonFavs() {
     let botonFavs = document.getElementById("favs");
@@ -42,6 +41,7 @@ function renderBotonFavs() {
     </button>`;
     botonFavs.innerHTML = contenido;
 }
+renderBotonFavs();
 function eliminarPropiedad(codigo) {
     const favoritos = cargarFavoritosLS();
     const nuevoFavorito = favoritos.filter(item => item.codigo != codigo);
