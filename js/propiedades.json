@@ -1,11 +1,11 @@
 [
-    {"ubicacion": "San Jorge", "ambientes": 4, "propiedad": "Casa", "precio": "3.000 USD", "superficie": 300, "estado": "Alquiler", "imagen": "../imagenes/casa2_a.jpg","codigo": 1, "localidad": "Campana" },
-    {"ubicacion": "Campana Centro", "ambientes": 3, "propiedad": "Casa", "precio": "700 USD", "superficie": 197.6, "estado": "Alquiler", "imagen": "../imagenes/casa5_a.jpg","codigo": 2, "localidad": "Campana" },
-    {"ubicacion": "Loma Verde", "ambientes": 2, "propiedad": "Departamento", "precio": "450 USD", "superficie": 46, "estado": "Alquiler", "imagen": "../imagenes/dep1_g.jpg","codigo":  3, "localidad":"Escobar" },
-    {"ubicacion": "Belén de Escobar", "ambientes": 6, "propiedad": "Departamento", "precio": "189.420.000 ARS", "superficie": 257, "estado": "Venta", "imagen": "../imagenes/dep2_a.jpg"," codigo":  4, "localidad":"Escobar" },
-    {"ubicacion": "Cardales Village", "ambientes": 5, "propiedad": "Casa", "precio": "55.000 USD", "superficie":  156, "estado": "Venta", "imagen": "../imagenes/casa1_a.jpg","codigo":  5, "localidad":"Campana" },
-    {"ubicacion": "El Bosque", "ambientes":4, "propiedad": "Casa", "precio": "240.000 USD", "superficie": 152, "estado": "Venta", "imagen": "../imagenes/casa3_a.jpg","codigo":  6, "localidad":"Campana" },
-    {"ubicacion": "Alto Los Cardales", "ambientes": 6, "propiedad": "Casa", "precio": "400.000 USD", "superficie": 300, "estado": "Venta", "imagen": "../imagenes/casa4_a.jpg","codigo":  7, "localidad":"Campana" },
-    {"ubicacion": "El Cardal II", "ambientes": 4, "propiedad": "Departamento", "precio": "92.988.000 ARS", "superficie": 99, "estado": "Venta", "imagen": "../imagenes/dep3_a.jpg","codigo":  8, "localidad":"Campana" },
-    {"ubicacion": "Haras Santa María", "ambientes": 6, "propiedad": "Casa", "precio": "220.000 ARS", "superficie": 305, "estado": "Alquiler", "imagen": "../imagenes/dep4_a.jpg","codigo": 9, "localidad":"Escobar" }
+    {"ubicacion": "San Jorge", "ambientes": 4, "propiedad": "Casa", "precio": "3.000 USD", "superficie": 300, "estado": "Alquiler", "imagen": "./imagenes/casa2_a.jpg","codigo": 1, "localidad": "Campana" },
+    {"ubicacion": "Campana Centro", "ambientes": 3, "propiedad": "Casa", "precio": "700 USD", "superficie": 197.6, "estado": "Alquiler", "imagen": "./imagenes/casa5_a.jpg","codigo": 2, "localidad": "Campana" },
+    {"ubicacion": "Loma Verde", "ambientes": 2, "propiedad": "Departamento", "precio": "450 USD", "superficie": 46, "estado": "Alquiler", "imagen": "./imagenes/dep1_g.jpg","codigo":  3, "localidad":"Escobar" },
+    {"ubicacion": "Belén de Escobar", "ambientes": 6, "propiedad": "Departamento", "precio": "189.420.000 ARS", "superficie": 257, "estado": "Venta", "imagen": "./imagenes/dep2_a.jpg"," codigo":  4, "localidad":"Escobar" },
+    {"ubicacion": "Cardales Village", "ambientes": 5, "propiedad": "Casa", "precio": "55.000 USD", "superficie":  156, "estado": "Venta", "imagen": "./imagenes/casa1_a.jpg","codigo":  5, "localidad":"Campana" },
+    {"ubicacion": "El Bosque", "ambientes":4, "propiedad": "Casa", "precio": "240.000 USD", "superficie": 152, "estado": "Venta", "imagen": "./imagenes/casa3_a.jpg","codigo":  6, "localidad":"Campana" },
+    {"ubicacion": "Alto Los Cardales", "ambientes": 6, "propiedad": "Casa", "precio": "400.000 USD", "superficie": 300, "estado": "Venta", "imagen": "./imagenes/casa4_a.jpg","codigo":  7, "localidad":"Campana" },
+    {"ubicacion": "El Cardal II", "ambientes": 4, "propiedad": "Departamento", "precio": "92.988.000 ARS", "superficie": 99, "estado": "Venta", "imagen": "./imagenes/dep3_a.jpg","codigo":  8, "localidad":"Campana" },
+    {"ubicacion": "Haras Santa María", "ambientes": 6, "propiedad": "Casa", "precio": "220.000 ARS", "superficie": 305, "estado": "Alquiler", "imagen": "./imagenes/dep4_a.jpg","codigo": 9, "localidad":"Escobar" }
 ]
