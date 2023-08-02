@@ -32,6 +32,16 @@ function agregarPropiedad(codigo) {
     guardarFavoritosLS(favoritos);
     renderBotonFavs();
 }
+function renderBotonFavs() {
+    let botonFavs = document.getElementById("favs");
+    let contenido = `<button type="button" class="btn btn-primary position-relative">
+        <img class="corazon_img" src="../imagenes/heart.svg" alt="corazón">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            ${cantidadTotalPropiedades()}  
+        </span>
+    </button>`;
+    botonFavs.innerHTML = contenido;
+}
 function eliminarPropiedad(codigo) {
     const favoritos = cargarFavoritosLS();
     const nuevoFavorito = favoritos.filter(item => item.codigo != codigo);
@@ -42,14 +52,4 @@ function eliminarPropiedad(codigo) {
 function cantidadTotalPropiedades() {
     const favoritos = cargarFavoritosLS();
     return favoritos.length;
-}
-function renderBotonFavs() {
-    let botonFavs = document.getElementById("favs");
-    let contenido = `<button type="button" class="btn btn-primary position-relative">
-        <img class="corazon_img" src="./imagenes/heart.svg" alt="corazón">
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            ${cantidadTotalPropiedades()}  
-        </span>
-    </button>`;
-    botonFavs.innerHTML = contenido;
 }
