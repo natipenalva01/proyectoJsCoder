@@ -24,7 +24,7 @@ function cantidadTotalPropiedades() {
 function renderBotonFavs() {
     let botonFavs = document.getElementById("favs");
     let contenido = `<button type="button" class="btn btn-primary position-relative">
-    <img src="../imagenes/bookmark-heart.svg" class="corazon_img" alt="corazon"> 
+    <img src="./imagenes/bookmark-heart.svg" class="corazon_img" alt="corazon"> 
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             ${cantidadTotalPropiedades()}  
         </span>
