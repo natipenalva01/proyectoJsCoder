@@ -4,11 +4,6 @@ function renderPropiedad() {
   let contenido = `
       <div class="container mb-5">
         <div class="row">
-          <div class="col text-end">
-          <a href="../favoritos.html" id="favs"></a>
-          </div>
-        </div>
-        <div class="row">
           <div class="col-8">
             <img src="../${propiedad.imagen}" class="card-img-top" alt="propiedades disponibles" style="width: 400px; height: 400px; display: block; margin: 0 auto;">
           </div>
